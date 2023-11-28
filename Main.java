@@ -5,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("|||||||||||||||||||||| Start Your Registration Here ||||||||||||||||||||||||||");
-
         System.out.println(" ");
         var student1 = new Student();
         student1.getProfile();
