@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Date;
 public class Student extends Courses {
@@ -9,16 +10,38 @@ public class Student extends Courses {
     public String Dept;
     public int Year;
     public int semester;
-
     public void getProfile(){
-            System.out.print("Enter your first name: ");
-             FName= input.nextLine().toUpperCase();
-            System.out.print("Enter your last name: ");
-             LName= input.nextLine().toUpperCase();
+        while (true) {
+            try {
+                System.out.print("Enter your First name: ");
+                FName = input.nextLine().toUpperCase();
+                if (FName.matches("[a-zA-Z+' ']+")) {
+                    setFname(FName);
+                    break;
+                } else {
+                    throw new InputMismatchException();
+                }
+            } catch(InputMismatchException e){
+                System.out.println("Invalid input try again");
+            }
+        }
+        while (true) {
+            try {
+                System.out.print("Enter your Last name: ");
+                LName = input.nextLine().toUpperCase();
+                if (LName.matches("[a-zA-Z+' ']+")) {
+                    setLname(LName);
+                    break;
+                     } else {
+                    throw new InputMismatchException();
+                }
+            } catch(InputMismatchException e){
+                System.out.println("Invalid input try again");
+            }
+        }
         while (true) {
             System.out.print("Enter your ID number: ");
             Id = input.nextLine();
-
             if (Id.matches("\\d+/\\d+")) {
                 break;
             } else {
@@ -28,6 +51,8 @@ public class Student extends Courses {
         System.out.print("Enter your Department: ");
         Dept = input.nextLine();
     }
+    private void setLname(String lName) {}
+    private void setFname(String fName) {}
     public void getBatch( ){
         System.out.print("Enter your current year:  ");
         Year = input.nextInt();
@@ -49,7 +74,6 @@ public class Student extends Courses {
         }else {
             System.out.println("This semester's courses and instructors are ");
         }
-
         if(Year == 2 && semester == 2){
             System.out.println("    ---------------------------------");
             System.out.println("Courses   Cr.Hr    Instructors");
@@ -71,8 +95,7 @@ public class Student extends Courses {
             for (String[] strings : ThirdYearSecondSemester) {
                 System.out.println(Arrays.deepToString(strings));
             }
-            System.out.println("    ---------------------------------");
-        }
+            System.out.println("    ---------------------------------");}
         else if (Year == 4 && semester == 1) {
             System.out.println("    ---------------------------------");
             System.out.println("Courses             Cr.Hr    Instructors");
@@ -99,6 +122,6 @@ public class Student extends Courses {
             System.out.println("    ---------------------------------");
         }
         Date now = new Date();
-        System.out.println(now);
+        System.out.println("      " + now);
     }
 }
