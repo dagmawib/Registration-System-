@@ -1,7 +1,0 @@
-***** Students Profile *****
- => First Name -- DAGMAWI
- => Last Name -- BELAYNEH
- => ÏD number -- 2465/14
- => Department -- software
- => Year -- 5
- => Semester -- 2

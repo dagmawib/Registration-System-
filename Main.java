@@ -23,14 +23,16 @@ public class Main {
         }
     }
     private static FileWriter getFileWriter(Student student1) throws IOException {
-        FileWriter storeDetails = new FileWriter("detail.txt");
-        storeDetails.write("***** Students Profile *****");
-        storeDetails.write("\n =>" + " First Name -- " + student1.getFName());
-        storeDetails.write("\n =>" + " Last Name -- " + student1.getLName());
-        storeDetails.write("\n =>" + " ÏD number -- " + student1.getId());
-        storeDetails.write("\n =>" + " Department -- " + student1.getDept());
-        storeDetails.write("\n =>" + " Year -- " + student1.getYear());
-        storeDetails.write("\n =>" + " Semester -- " + student1.getSemester());
-        return storeDetails;
+        FileWriter storeDetails = new FileWriter("detail.txt",true);
+        do {
+            storeDetails.append("\n***** Students Profile *****");
+            storeDetails.append("\n =>" + " First Name -- ").append(student1.getFName());
+            storeDetails.append("\n =>" + " Last Name -- ").append(student1.getLName());
+            storeDetails.append("\n =>" + " ÏD number -- ").append(student1.getId());
+            storeDetails.append("\n =>" + " Department -- ").append(student1.getDept());
+            storeDetails.append("\n =>" + " Year -- ").append(String.valueOf(student1.getYear()));
+            storeDetails.append("\n =>" + " Semester -- ").append(String.valueOf(student1.getSemester()));
+            return storeDetails;
+        }while (true);
     }
 }
