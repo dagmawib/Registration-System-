@@ -15,6 +15,7 @@ public class Main {
         System.out.println(" ");
         student1.display();
 
+//        try catch for Writing the inputs on the detail.txt file
         try {
             FileWriter storeDetails = getFileWriter(student1);
             storeDetails.close();
@@ -24,8 +25,9 @@ public class Main {
     }
     private static FileWriter getFileWriter(Student student1) throws IOException {
         FileWriter storeDetails = new FileWriter("detail.txt",true);
+        storeDetails.write("\n***** Student Profile *****");
+//        write the input multiple times
         do {
-            storeDetails.append("\n***** Students Profile *****");
             storeDetails.append("\n =>" + " First Name -- ").append(student1.getFName());
             storeDetails.append("\n =>" + " Last Name -- ").append(student1.getLName());
             storeDetails.append("\n =>" + " ÏD number -- ").append(student1.getId());

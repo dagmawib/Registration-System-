@@ -19,7 +19,7 @@ public class Student extends Courses {
         this.Year = Year;
         this.semester = semester;
     }
-
+//    receiving First name with character validation.
     public void getProfile(){
         while (true) {
             try {
@@ -35,6 +35,7 @@ public class Student extends Courses {
                 System.out.println("Invalid input try again");
             }
         }
+        //    receiving Last name with character validation.
         while (true) {
             try {
                 System.out.print("Enter your Last name: ");
@@ -49,6 +50,7 @@ public class Student extends Courses {
                 System.out.println("Invalid input try again");
             }
         }
+        //    receiving ID number with character validation.
         while (true) {
             System.out.print("Enter your ID number: ");
             Id = input.nextLine();
@@ -63,6 +65,8 @@ public class Student extends Courses {
     }
     private void setLname(String lName) {}
     private void setFname(String fName) {}
+
+//    receiving year and semester with checking the semester input not to be 1 or 2
     public void getBatch( ){
         System.out.print("Enter your current year:  ");
         Year = input.nextInt();
@@ -84,6 +88,7 @@ public class Student extends Courses {
         }else {
             System.out.println("This semester's courses and instructors are ");
         }
+//        checking the semester and year inorder to give the appropriate courses and instructors
         if(Year == 2 && semester == 2){
             System.out.println("    ---------------------------------");
             System.out.println("Courses   Cr.Hr    Instructors");
@@ -131,6 +136,7 @@ public class Student extends Courses {
             }
             System.out.println("    ---------------------------------");
         }
+//        display the date and time of registration.
         Date now = new Date();
         System.out.println("      " + now);
     }
