@@ -4,4 +4,4 @@
  => ÏD number -- 2465/14
  => Department -- software
  => Year -- 5
- => Semester -- 1
+ => Semester -- 2

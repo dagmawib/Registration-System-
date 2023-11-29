@@ -4,12 +4,22 @@ import java.util.Scanner;
 import java.util.Date;
 public class Student extends Courses {
     Scanner input = new Scanner(System.in);
-    public String Id;
-    public String FName;
-    public String LName;
-    public String Dept;
-    public int Year;
-    public int semester;
+    private String Id;
+    private String FName;
+    private String LName;
+    private String Dept;
+    private int Year;
+    private int semester;
+
+    public Student(String FName,String LName , String Id , String Dept , int Year , int semester) {
+        this.FName  = FName ;
+        this.LName  = LName ;
+        this.Id = Id;
+        this.Dept = Dept;
+        this.Year = Year;
+        this.semester = semester;
+    }
+
     public void getProfile(){
         while (true) {
             try {
@@ -124,4 +134,10 @@ public class Student extends Courses {
         Date now = new Date();
         System.out.println("      " + now);
     }
+    public String getId() {return Id;}
+    public String getFName() {return FName;}
+    public String getDept() {return Dept;}
+    public int getYear() {return Year;}
+    public int getSemester() {return semester;}
+    public String getLName() { return LName;}
 }
